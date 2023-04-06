@@ -94,6 +94,10 @@ form{
   margin: 0 auto;
 }
 
+.card img{
+  width: 100%;
+}
+
 table {
  border-collapse: collapse;
     border-spacing: 0;
@@ -119,4 +123,8 @@ tr:nth-child(even) {
 }
 .dark > a {
   color: white;
+}
+
+.errorContact{
+  color: red;
 }

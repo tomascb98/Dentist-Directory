@@ -1,21 +1,33 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { ContextGlobal } from "./utils/global.context";
 
 
-const Card = ({ name, username, id }) => {
-
+const Card = (props) => {
+  const {state, dispatch} = useContext(ContextGlobal)
   const addFav = ()=>{
     // Aqui iria la logica para agregar la Card en el localStorage
+      dispatch({type: "ADD_FAV", payload: props.dentist})
   }
 
+  useEffect(()=>{
+    localStorage.setItem('favs', JSON.stringify(state.favs))
+    console.log("EL JSON")
+    console.log(JSON.parse(localStorage.getItem('favs')))
+   },[state.favs])
+   
+  const url = "/users/" + props.dentist.id;
   return (
-    <div className="card">
-        {/* En cada card deberan mostrar en name - username y el id */}
-
-        {/* No debes olvidar que la Card a su vez servira como Link hacia la pagina de detalle */}
-
-        {/* Ademas deberan integrar la logica para guardar cada Card en el localStorage */}
-        <button onClick={addFav} className="favButton">Add fav</button>
+   
+      <div className="card">
+         <Link to = {url}>
+          <img src="/images/doctor.jpg" alt="Imagen profesional" />
+          <h3>{props.dentist.name}</h3>
+          <h3>{props.dentist.username}</h3>
+        </Link>
+          <button onClick={addFav} className="favButton">⭐️</button>
     </div>
+  
   );
 };
 
