@@ -16,7 +16,7 @@ const Favs = () => {
 
    return (
     <div className={state.isDark ? "dark" : ""}>
-      <h2>Dentists Favs</h2>
+      <h2>DENTIST FAVS</h2>
       <div className="card-grid">
         {favDentists.map((dentist) => <Card dentist={dentist} key={dentist.id}/>)}
       </div>

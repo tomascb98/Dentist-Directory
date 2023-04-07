@@ -23,7 +23,7 @@ const Home = () => {
 
   return (
     <main className={state.isDark ? "dark" : ""} >
-      <h2>Home</h2>
+      <h2>HOME</h2>
       <div className='card-grid'>
         {state.dentists.map((dentist)=> <Card dentist={dentist} key={dentist.id}/>)}
       </div>

@@ -7,7 +7,7 @@ import { ContextGlobal } from '../Components/utils/global.context'
 const Contact = () => {
   const {state, dispatch} = useContext(ContextGlobal)
   return (
-    <div className={state.isDark ? "dark" : ""} >
+    <div id="contact" className={state.isDark ? "dark" : ""} >
       <h2>Want to know more?</h2>
       <p>Send us your questions and we will contact you</p>
       <Form/>

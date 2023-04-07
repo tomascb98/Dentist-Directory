@@ -16,9 +16,9 @@ const Navbar = () => {
         <h1>Salvador Muelitas</h1>
       </div>
       <ul>
-        <li><Link to='/home'><h3>Home</h3></Link></li>
-        <li><Link to='/contact'><h3>Contact</h3></Link></li>
-        <li> <Link to='/favs'><h3>Favs</h3></Link></li>
+        <li><Link to='/home'><h3>HOME</h3></Link></li>
+        <li><Link to='/contact'><h3>CONTACT US</h3></Link></li>
+        <li> <Link to='/favs'><h3>FAVORITES</h3></Link></li>
         <li> <button className={state.isDark ? "dark" : ""} onClick={()=>dispatch({type: "CHANGE_THEME"})}>{state.isDark ? "🌞" :"🌚"}</button></li>
       </ul>
       

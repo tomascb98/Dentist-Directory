@@ -36,22 +36,23 @@ const Form = () => {
   return (
     <div>
       <form onSubmit={formHandler}>
-        <label>Nombre y Apellido:</label>
+        <label>Full Name:</label>
         <input type="text" 
-                placeholder="Ingrese el nombre"
+                placeholder="Insert your full name"
                 value= {userName}
                 onChange={nameHandler}/>
-        
-        <label>Email de contacto:</label>
+        <p className="errorContact">{showErrorName && "The name has to be 5 characters at least"}</p>
+
+        <label>Email:</label>
         <input type="email"
-                placeholder="Ingrese el email"
+                placeholder="Insert your email"
                 value = {userEmail}
                 onChange = {emailHandler}/>
+        <p className="errorContact">{showErrorMail && "The email must be in format mail@domain.com"}</p>
         <button>Send</button>
       </form>
-      <p className="errorContact">{showErrorName && "El nombre debe tener al menos 5 caracteres"}</p>
-      <p className="errorContact">{showErrorMail && "El mail debe tener un formato mail@dominio.com"}</p>
-      <h6>{showSuccesful && "Gracias "+userName+", te contactaremos cuando antes vía mail"}</h6>
+      
+      <h4>{showSuccesful && "THANKS "+userName.toUpperCase()+", WE WILL CONTACT YOU VIA EMAIL AS SOON AS POSSIBLE."}</h4>
     </div>
   );
 };

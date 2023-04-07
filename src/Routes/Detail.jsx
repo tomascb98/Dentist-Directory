@@ -21,7 +21,7 @@ const Detail = () => {
 
   return (
     <div className={state.isDark ? "dark" : ""}>
-      <h2>Detail Dentist ID: {dentist.id}</h2>
+      <h2>DETAIL DENTIST ID: {dentist.id}</h2>
       <table>
         <tbody>
           <tr>
