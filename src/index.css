@@ -12,22 +12,88 @@ code {
     monospace;
 }
 .favButton{
-  background-color: rgba(136, 136, 136, 0.116);
-  padding: 10px;
-  border: none;
-  width: 100%;
+  background-color: #b45c5500;
+  border: 3px ;
+  padding-bottom: 15px;
+  font-size: 30px;
   cursor: pointer;
+  transition-duration: 0.2s;
 }
 
-h1{
+
+h1, h2, h3{
   text-align: center;
+}
+
+h2{
+  margin: 0;
 }
 
 nav{
   display: flex;
-  width: 80vw;
+  width: 100vw;
   justify-content: flex-start;
-  padding: 1rem;
+  align-items: center;
+  margin: 0%;
+}
+
+nav div{
+  display: flex;
+  width: 50vw;
+  align-items: center;
+}
+nav h1{
+  font-size: 40px;
+  font-family: 'Droid Sans';
+  text-align: center;
+  background: linear-gradient(to right, #122b3d, #0d5058);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+nav img{
+  width: 100px;
+  height: 100px;
+  margin: 0px 10px 0px 3vw;
+  border-radius: 50%;
+  border: #000 5px solid;
+}
+
+nav ul{
+  display: flex;
+  justify-content: space-evenly;
+  width: 50vw;
+  align-items: center;
+  
+}
+
+nav li{
+  list-style-type: none;
+  font: 'Droid Sans';
+  font-size: 20px;
+}
+
+nav button{
+  font-size: 40px;
+  cursor: pointer;
+  border-radius: 50%;
+  border: #000 0px solid;
+  background-color:#ffffffc2;
+}
+
+nav button:hover {
+  background-color: rgb(45, 45, 45);
+  border: 2px solid #000000;
+}
+nav button.dark{
+  background-color: #3d3d3d;
+}
+nav button.dark:hover {
+  background-color: #ffffff;
+  border: 2px solid #FFFFFF;
+}
+
+button:active{
+  transform: translateY(3px);
 }
 
 a{
@@ -47,9 +113,9 @@ footer {
   padding: 2rem;
   position: relative;
   bottom: 0;
-  width: 90%;
+  width: 100%;
   height: 40px;
-  margin-top: 2rem;
+  margin-top: 0;
 }
 
 footer > img{
@@ -77,11 +143,16 @@ form{
   align-items: center;
   width: 200px;
   padding: 0.5rem 0.5rem 0 0.5rem;
-  border: 0.5px solid rgb(136, 136, 136);
+  border: 1px solid rgb(136, 136, 136);
+  border-radius: 6%;
+}
+
+.card img{
+  border-radius: 30%;
 }
 
 .card:hover{
-  border: 0.5px solid rgb(206, 217, 142);
+  border: 2px solid rgb(206, 217, 142);
 }
 
 .card-grid{
@@ -92,6 +163,7 @@ form{
   height: auto;
   flex-wrap: wrap;
   margin: 0 auto;
+  margin-top: 2vw;
 }
 
 .card img{
@@ -118,12 +190,13 @@ tr:nth-child(even) {
 }
 
 .dark{
-  background-color: #12121296;
+  background-color: #3d3d3d;
   color: white;
 }
-.dark > a {
+.dark > a, .dark ul  li  h3, .dark div h3{
   color: white;
 }
+
 
 .errorContact{
   color: red;

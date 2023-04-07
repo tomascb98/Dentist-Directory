@@ -25,10 +25,10 @@ const Card = (props) => {
    
       <div className="card">
          <Link to = {url}>
-          <img src="/images/doctor.jpg" alt="Imagen profesional" />
-          <h3>{props.dentist.name}</h3>
-          <h3>{props.dentist.username}</h3>
-        </Link>
+            <img src="/images/doctor.jpg" alt="Imagen profesional" />
+            <h3>{props.dentist.name}</h3>
+            <h3>{props.dentist.username}</h3>
+          </Link>
           <button onClick={addFav} className="favButton">⭐️</button>
     </div>
   

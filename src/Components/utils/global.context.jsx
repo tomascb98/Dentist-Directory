@@ -16,6 +16,8 @@ const globalReducer = (state, action) =>{
       return {...state, dentists: action.payload}
     case "ADD_FAV":
       return {...state, favs: [...state.favs, action.payload]}
+    case "CHANGE_THEME":
+      return {...state, isDark: !state.isDark}
     default: new Error;
   }
 }

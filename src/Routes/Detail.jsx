@@ -20,8 +20,8 @@ const Detail = () => {
   },[])
 
   return (
-    <>
-      <h1>Detail Dentist ID: {dentist.id}</h1>
+    <div className={state.isDark ? "dark" : ""}>
+      <h2>Detail Dentist ID: {dentist.id}</h2>
       <table>
         <tbody>
           <tr>
@@ -40,7 +40,7 @@ const Detail = () => {
       </table>
       {/* aqui deberan renderizar la informacion en detalle de un user en especifico */}
       {/* Deberan mostrar el name - email - phone - website por cada user en especifico */}
-    </>
+    </div>
   )
 }
 
