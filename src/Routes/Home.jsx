@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import Card from '../Components/Card'
 import { ContextGlobal } from '../Components/utils/global.context'
 
@@ -16,16 +16,17 @@ const Home = () => {
     .then((data) => dispatch({type: "GET_USERS", payload: data}))
     .catch((e) => console.log(e))
   },[])
-  console.log(state.favs)
+  
+  useEffect(()=>{
+    localStorage.setItem('favs', JSON.stringify(state.favs))
+   },[state.favs])
 
   return (
     <main className="" >
       <h1>Home</h1>
       <div className='card-grid'>
-        {/* Aqui deberias renderizar las cards */}
-        {state.dentists.map((dentist)=>{
-          return <Card dentist={dentist}/>
-        })}
+        {state.dentists.map((dentist)=> <Card dentist={dentist} key={dentist.id}/>
+        )}
       </div>
     </main>
   )
@@ -33,4 +34,3 @@ const Home = () => {
 
 export default Home
 
-// name={dentist.name} username={dentist.username} id={dentist.id}

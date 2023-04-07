@@ -8,7 +8,7 @@ import { ContextGlobal } from '../Components/utils/global.context'
 
 const Detail = () => {
   const {state, dispatch} = useContext(ContextGlobal)
-  // Consumiendo el parametro dinamico de la URL deberan hacer un fetch a un user en especifico
+
   const [dentist, setDentist] = useState({})
   const {id} = useParams()
   const url = "https://jsonplaceholder.typicode.com/users/" + id;

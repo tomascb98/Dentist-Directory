@@ -6,15 +6,19 @@ import { ContextGlobal } from "./utils/global.context";
 const Card = (props) => {
   const {state, dispatch} = useContext(ContextGlobal)
   const addFav = ()=>{
-    // Aqui iria la logica para agregar la Card en el localStorage
-      dispatch({type: "ADD_FAV", payload: props.dentist})
-  }
+    let validadorDentistaFavRepetido = false;
 
-  useEffect(()=>{
-    localStorage.setItem('favs', JSON.stringify(state.favs))
-    console.log("EL JSON")
-    console.log(JSON.parse(localStorage.getItem('favs')))
-   },[state.favs])
+    state.favs.forEach(dentistFav => {
+      if(dentistFav.id == props.dentist.id){
+        validadorDentistaFavRepetido = true;
+      }
+      console.log(validadorDentistaFavRepetido)
+    });
+
+    if(!validadorDentistaFavRepetido){
+      dispatch({type: "ADD_FAV", payload: props.dentist})
+    }
+  }
    
   const url = "/users/" + props.dentist.id;
   return (
